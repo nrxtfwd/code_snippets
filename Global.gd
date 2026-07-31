@@ -1,6 +1,13 @@
 extends Node
 
-var player
+const DEATH_HEIGHT = -50.0
+
+var player : Player
+
+signal player_died
+
+func damage(from, to, damage):
+	to.get_node('health_node').health -= damage
 
 func scene():
 	return get_tree().current_scene
